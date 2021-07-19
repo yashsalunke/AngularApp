@@ -1,0 +1,20 @@
+<h3>
+  User Details
+</h3>
+
+<div *ngIf="user">
+  <span>UserId: {{ user.id }}</span><br>
+  <span>User Name: {{ user.name }}</span><br>
+  <span>User Email: <a href="{{ user.email | appendor: 'pre': 'mailto://' }}">{{ user.email }}</a></span><br>
+  <span>User Phone: <a href="{{ user.phone | appendor: 'pre': 'tel://' }}">{{ user.phone }}</a></span><br>
+</div>
+<hr>
+
+<button class="btn btn-success" (click)="createUser()">Create User</button>
+<button class="btn btn-primary" (click)="updateUser()">Update User</button>
+<button class="btn btn-danger" (click)="deleteUser()">Delete User</button>
+<button class="btn btn-warning" (click)="getUserPosts()">Get User Posts</button>
+
+<pre>
+  {{ posts | async | json | uppercase }}
+</pre>
